@@ -17,7 +17,7 @@ button.addEventListener("click", function(){
     button.style.transform = "scale(0.8)";
     setTimeout(()=>{
         button.style.transform = "scale(1)";
-        window.location.href = "./love/love.html"
+        window.location.href = "https://phamthuongpvt.github.io/no/a.gif"
     },200)
 })
 
