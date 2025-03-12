@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Nếu có file CSS riêng cho trang, vẫn giữ liên kết này -->
+  <link rel="stylesheet" href="love.css" />
+  <title>❤️Phạm Thưởng❤️</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* Thêm background cho toàn bộ trang */
+    body {
+      background: url('/image/l.gif') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    /* CSS cho hiệu ứng loading cỏ 3 lá (có thể giữ lại nếu cần) */
+    .loadingShamrock {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .shamrockAnimation {
+      font-size: 50px;
+      animation: spin 2s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    /* CSS cho ảnh ban đầu trong boxCar */
+    .boxCar img {
+      width: 40px; /* Kích thước đã được giảm xuống */
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Nội dung chính của trang -->
+    <div class="formInput">
+      <div class="boxHands">
+        <div class="handsCat">
+          <img src="../image/handsCat.png" alt="">
+        </div>
+        <h1>❤️Yêu Em❤️</h1>
+      </div>
+      <div class="boxSlider">
+        <div class="listSlider">
+          <div class="slider">
+            <img src="../image/1.jpg" alt="">
+          </div>
+          <div class="slider">
+            <img src="../image/2.jpg" alt="">
+          </div>
+        </div>
+        <div class="left">
+          <i class="fa-solid fa-chevron-left"></i>
+        </div>
+        <div class="right">
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+      </div>
+      <div class="boxHandsInput">
+        <div class="handsCatImgInput">
+          <img src="../image/handsCat.png" alt="">
+        </div>
+        <input type="text" id="inputField" placeholder="Nhập tên..." readonly>
+      </div>
+      <div class="buttonLove">
+        <div class="cricleBtn"></div>
+        <div class="button"></div>
+      </div>
+    </div>
+    <div class="boxLine">
+      <div class="boxCar">
+        <!-- Ban đầu chứa 6 ảnh gif -->
+        <img src="../image/mewmew.gif" alt="Gif 1">
+        <img src="../image/mewmew.gif" alt="Gif 2">
+        <img src="../image/mewmew.gif" alt="Gif 3">
+        <img src="../image/mewmew.gif" alt="Gif 4">
+        <img src="../image/mewmew.gif" alt="Gif 5">
+        <img src="../image/mewmew.gif" alt="Gif 6">
+        <img src="../image/mewmew.gif" alt="Gif 7">
+        <img src="../image/mewmew.gif" alt="Gif 8">
+        <img src="../image/mewmew.gif" alt="Gif 9">
+        <img src="../image/mewmew.gif" alt="Gif 10">
+        <img src="../image/mewmew.gif" alt="Gif 11">
+        <img src="../image/mewmew.gif" alt="Gif 12">
+        <img src="../image/mewmew.gif" alt="Gif 13">
+        <img src="../image/mewmew.gif" alt="Gif 14">
+        <img src="../image/mewmew.gif" alt="Gif 15">
+        <img src="../image/heartAnimation.gif" alt="Gif 6">
+      </div>
+      <!-- Đã xoá phần ground-line -->
+    </div>
+  </div>
+
+  <!-- Hiệu ứng loading ban đầu (có thể giữ lại hoặc xoá nếu không cần) -->
+  <div class="loadingShamrock">
+    <div class="shamrockAnimation">
+      ☘️
+    </div>
+  </div>
+
+  <div class="wrapperLetterForm">
+    <div class="boxLetter">
+      <i class="fa-solid fa-xmark"></i>
+      <div class="formLetter">
+        <div class="heartLetter">
+          <div class="heartLetterItem"></div>
+        </div>
+        <div class="heartLetter">
+          <div class="heartLetterItem"></div>
+        </div>
+        <div class="wrapperLetter">
+          <div class="giftbox">
+            <div class="img">
+              <img src="../image/giftbox.png" alt="">
+            </div>
+          </div>
+          <div class="textLetter">
+            <h2></h2>
+            <p class="contentLetter"></p>
+            <div class="heartAnimation">
+              <img src="../image/heartAnimation.gif" alt="">
+            </div>
+          </div>
+          <div class="mewmew1">
+            <img src="../image/mewmew.gif" alt="">
+          </div>
+          <div class="mewmew2">
+            <img src="../image/mewmew.gif" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="before"></div>
+    </div>
+  </div>
+
+  <!-- Các script phía dưới vẫn giữ nguyên các hiệu ứng đã có -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+  <script>
+    // Các hàm xử lý hiệu ứng chữ trong form thư
+    let indexText = 0;
+    let textLetter = document.querySelector('.textLetter h2');
+    const textLetterH2 = "Gửi em!";
+    let timoutTextLetter;
+    function textCharLetter(){
+      if (indexText < textLetterH2.length) {
+        textLetter.textContent += textLetterH2[indexText];
+        indexText++;
+        setTimeout(textCharLetter, 10);
+      }
+      else{
+        clearInterval(timoutTextLetter);
+        setTimeout(()=>{
+          funcTimeoutLetterContent();
+        },500);
+      }
+    }
+    function funcTimeoutLetter(){
+      indexText = 0; 
+      textLetter.textContent = ''; 
+      clearInterval(timoutTextLetter);
+      timoutTextLetter = setInterval(()=>{
+        textCharLetter();
+      }, 20);
+    }
+
+    let indexTextContent = 0;
+    let textLetterContent = document.querySelector('.contentLetter');
+    const textLetterP = "1 tuần có 7 ngày. 1 ngày có 24 giờ. 1 giờ có 60 phút. 1 phút có 60 giây. Không có một ngày hoặc giờ mà anh không nhớ em. Không có giây phút nào mà anh không nghĩ đến em. Tâm hồn và trái tim anh tràn ngập em. Nhớ và yêu em nhiều lắm.";
+    let timerId; 
+    function textCharLetterContent() {
+  if (indexTextContent < textLetterP.length) {
+    textLetterContent.textContent += textLetterP.charAt(indexTextContent);
+    indexTextContent++;
+    timerId = setTimeout(textCharLetterContent, 10);
+  }
+}
+
+function showLetterContent() {
+  indexTextContent = 0;
+  textLetterContent.textContent = "";
+  clearTimeout(timerId);
+  textCharLetterContent();
+}
+
+    $(window).on('load', function(event){
+      $('body').removeClass('preloading');
+      // Hiệu ứng loading
+      $('.loadingShamrock').delay(1000).fadeOut('fast');
+
+      // Xử lý gõ chữ trong ô input
+      const inputField = document.getElementById('inputField');
+      const textToType = "Tên Gì Nhờ..."; // thay đổi tên người yêu của bạn
+      const typingSpeed = 100; // milliseconds per character
+      let charIndex = 0;
+      function typeText() {
+        if (charIndex < textToType.length) {
+          inputField.value += textToType.charAt(charIndex);
+          charIndex++;
+          setTimeout(typeText, typingSpeed);
+        }
+        if(inputField.value.length == textToType.length){
+          setTimeout(()=>{
+            document.querySelector(".buttonLove").style.transform = "translateY(0%)";
+            document.querySelector(".cricleBtn").style.transform = "scale(0.1)";
+          },1000);
+          setTimeout(()=>{
+            document.querySelector(".cricleBtn").style.transform = "scale(1)";
+            document.querySelector(".cricleBtn").innerHTML = "💗";
+          },2000);
+          setTimeout(()=>{
+            document.querySelector(".buttonLove").style.width = "120px";
+            document.querySelector(".button").style.transform = "translateX(25px)";
+          },2500);
+          setTimeout(()=>{
+            document.querySelector(".button").style.width = "calc(100% - 25px)";
+            document.querySelector(".button").style.height = "10px";
+          },3000);
+          setTimeout(()=>{
+            document.querySelector(".button").style.height = "30px";
+          },3500);
+          setTimeout(() => {
+            let button = document.querySelector(".button");
+            button.innerHTML = "Nhận thư";
+            button.addEventListener("click", function () {
+              button.style.transform = "scale(0.8)";
+              setTimeout(() => {
+                button.style.transform = "scale(10)";
+                window.location.href = "/index2.html";
+              }, 10000);
+            });
+          }, 4000);
+        }
+      }
+      setTimeout(()=>{
+        typeText();
+      }, 11500);
+
+      // Xử lý mở form thư từ các phần tử .letters khi click
+      document.querySelector(".buttonLove").addEventListener("click", function(){
+        let timeout = setInterval(()=>{
+          var letters = document.createElement("div");
+          letters.className = "letters";
+          letters.innerHTML = '<img src="../image/letters.png" alt="">';
+          document.querySelector("body").prepend(letters);
+          let left = Math.floor(Math.random() * 100);
+          let rotate = Math.floor(Math.random() * 360);
+          letters.style.left = left + "%";
+          letters.style.top = "-10%";
+          letters.style.transform = `rotate(${rotate}deg)`;
+          setTimeout(()=>{
+            letters.style.top = "100%";
+          },100);
+          setTimeout(()=>{
+            letters.remove();
+          },11000);
+          letters.addEventListener("click", function(e){
+            e.stopPropagation();
+            clearInterval(timeout);
+            $(".wrapperLetterForm").fadeIn();
+            funcTimeoutLetter();
+          });
+        },500);
+      });
+
+      // Đóng form thư khi click nút "x"
+      document.querySelector(".fa-xmark").addEventListener("click", function(e){
+        e.stopPropagation();
+        $(".wrapperLetterForm").fadeOut();
+        indexTextContent = 0;
+        textLetterContent.textContent = '';
+        clearInterval(timoutTextLetterContent);
+      });
+
+      // --- Chuyển ảnh ra ngoài và animate chạy quanh màn hình ---
+      $('.boxCar img').each(function(){
+        var $img = $(this);
+        // Di chuyển ảnh ra ngoài container, append vào body
+        $img.appendTo('body');
+        // Đặt kích thước nhỏ hơn
+        $img.css("width", "50px");
+        // Đặt vị trí ban đầu ngẫu nhiên
+        $img.css({
+          position: 'absolute',
+          left: Math.random() * ($(window).width() - $img.width()),
+          top: Math.random() * ($(window).height() - $img.height())
+        });
+        animateGif($img);
+      });
+    });
+
+    // Sự kiện global: khi click bất cứ đâu (bao gồm cả vùng của form) sẽ đóng form thư
+    $(document).on("click", function(){
+      if($(".wrapperLetterForm").is(":visible")){
+        $(".wrapperLetterForm").fadeOut();
+        indexTextContent = 0;
+        textLetterContent.textContent = '';
+        clearInterval(timoutTextLetterContent);
+      }
+    });
+
+    // Xử lý nút chuyển slider
+    document.querySelector(".boxSlider .right").addEventListener("click", function(){
+      var slider = document.querySelectorAll(".slider");
+      document.querySelector(".listSlider").appendChild(slider[0]);
+    });
+    document.querySelector(".boxSlider .left").addEventListener("click", function(){
+      var slider = document.querySelectorAll(".slider");
+      document.querySelector(".listSlider").prepend(slider[slider.length -1]);
+    });
+
+    // Hàm animateGif: di chuyển ảnh đến vị trí ngẫu nhiên rồi gọi lại đệ quy để tạo hiệu ứng chạy liên tục
+    function animateGif($img) {
+      var newLeft = Math.random() * ($(window).width() - $img.width());
+      var newTop = Math.random() * ($(window).height() - $img.height());
+      var duration = Math.random() * 5000 + 3000; // thời gian di chuyển từ 3000ms đến 8000ms
+      $img.animate({ left: newLeft + 'px', top: newTop + 'px' }, duration, function(){
+        animateGif($img);
+      });
+    }
+    // Mảng chứa các thông điệp thư
+const letterMessages = [
+  "Chúc em luôn hạnh phúc và rạng rỡ mỗi ngày!",
+  "Anh yêu em, chúc em có một ngày tuyệt vời!",
+  "Mỗi phút bên em là niềm hạnh phúc vô tận của anh!"
+];
+
+// Hàm tạo hiệu ứng gõ chữ cho nội dung thư (độc lập, sử dụng biến cục bộ)
+(function(){
+  // Mảng chứa các thông điệp thư
+  const letterMessages = [
+    "Chúc em luôn hạnh phúc và rạng rỡ mỗi ngày!",
+    "Anh yêu em, chúc em có một ngày tuyệt vời!",
+    "Mỗi phút bên em là niềm hạnh phúc vô tận của anh!"
+  ];
+  // Biến theo dõi chỉ số thông điệp hiện tại (đóng gói cục bộ)
+  let currentLetterIndex = 0;
+  
+  // Hàm hiển thị nội dung thư theo hiệu ứng gõ chữ
+  function showLetterContent(containerSelector) {
+    const container = document.querySelector(containerSelector);
+    container.textContent = "";
+    let index = 0;
+    const message = letterMessages[currentLetterIndex];
+    function typeChar() {
+      if(index < message.length) {
+        container.textContent += message.charAt(index);
+        index++;
+        setTimeout(typeChar, 10);
+      } else {
+        // Sau khi hoàn tất, cập nhật chỉ số cho lần mở tiếp theo
+        currentLetterIndex = (currentLetterIndex + 1) % letterMessages.length;
+      }
+    }
+    typeChar();
+  }
+  
+  // Gán sự kiện click cho phần tử letter (bạn có thể gọi khi tạo phần tử letter)
+  // Ở đây, ta dùng event delegation để xử lý click trên bất kỳ phần tử nào có class "letters"
+  document.addEventListener("click", function(e) {
+    const letterEl = e.target.closest(".letters");
+    if(letterEl) {
+      e.stopPropagation();
+      // Xoá tất cả các phần tử letter đang hiển thị
+      document.querySelectorAll(".letters").forEach(el => el.remove());
+      // Hiển thị form thư (nếu chưa hiện)
+      const formWrapper = document.querySelector(".wrapperLetterForm");
+      if(formWrapper) {
+        formWrapper.style.display = "block";
+      }
+      // Bắt đầu hiệu ứng gõ chữ cho nội dung thư (giả sử phần hiển thị thư có class .contentLetter)
+      showLetterContent('.contentLetter');
+    }
+  });
+})();
+
+  </script>
+</body>
+</html>

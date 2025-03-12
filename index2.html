@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>❤️Phạm Thưởng😘</title>
+  <style>
+    /* Background cho toàn bộ trang */
+    body {
+      background: url('/rr.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    /* Container chính của form */
+    .form-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+      position: relative;
+      z-index: 2;
+    }
+    .form-container {
+      max-width: 640px;
+      width: 90%;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease-in-out;
+    }
+    .form-container:hover {
+      transform: scale(1.02);
+    }
+    .group-input {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+      color: #444;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 16px;
+      transition: all 0.3s ease-in-out;
+      text-align: center;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: #ff6b81;
+      box-shadow: 0 0 10px rgba(255, 107, 129, 0.5);
+      outline: none;
+    }
+    .wedding-submit {
+      width: 100%;
+      padding: 12px;
+      background-color: #ff6b81;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    .wedding-submit:hover {
+      background-color: #e0576f;
+      transform: scale(1.05);
+    }
+    /* Hiệu ứng BoxCar */
+    .boxCar {
+  position: fixed;   /* Đặt boxCar cố định */
+  bottom: 0;         /* Nằm ở dưới cùng của màn hình */
+  left: 0;           /* Bắt đầu từ bên trái */
+  width: 100vw;      /* Chiếm toàn bộ chiều rộng */
+  height: 100vh;     /* Chiếm toàn bộ chiều cao */
+  margin: 0;         /* Xoá margin */
+  background: rgba(255, 255, 255, 0.3);
+  border: none;         /* Loại bỏ viền */
+  border-radius: 0;     /* Loại bỏ bo tròn */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.boxCar img {
+  width: 50px;
+  position: absolute;
+}
+
+    /* Loading */
+    .loadingShamrock {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .shamrockAnimation {
+      font-size: 50px;
+      animation: spin 2s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Form Page -->
+  <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeqmzXBik2wfixsnFCtVF8czf_vOM8V-zJfblX1naBRZR3UwQ/formResponse" method="post" id="form-wedding" target="_blank">
+    <div class="form-wrapper">
+      <div class="form-container">
+        <h2>Hiểu nhau hơn nhé người đẹp 😘</h2>
+        <p>Giúp anh mấy câu hỏi bé nhé😘</p>
+        
+        <!-- Container các câu hỏi chính -->
+        <div class="main-questions">
+          <div class="group-input">
+            <label>Em có ai để hâm mộ không?</label>
+            <input type="text" class="input" name="entry.2005620554" required placeholder="Nhập câu trả lời" autocomplete="off">
+          </div>
+          <div class="group-input">
+            <label>Điều em không thích nhất là gì ?🧐</label>
+            <input type="text" class="input" name="entry.1212822561" required placeholder="Nhập câu trả lời" autocomplete="off">
+          </div>
+          <div class="group-input">
+            <label>Ấn tượng đầu tiên của em về anh là gì nhỉ? Anh tò mò lắm nè.😙</label>
+            <input type="text" class="input" name="entry.1065046570" required placeholder="Nhập câu trả lời" autocomplete="off">
+          </div>
+          <div class="group-input">
+            <label>Nỗi sợ lớn nhất của em là gì 🥶</label>
+            <input type="text" class="input" name="entry.634455097" required placeholder="Nhập câu trả lời" autocomplete="off">
+          </div>
+          <div class="group-input">
+            <label>Em thấy có vấn đề nào mà em cảm thấy hứng thú hoặc hấp dẫn không ? 🤪</label>
+            <input type="text" class="input" name="entry.884329170" required placeholder="Nhập câu trả lời" autocomplete="off">
+          </div>
+          <div class="group-input">
+            <label>Món quà tốt nhất bạn từng nhận được và đó là của ai?</label>
+            <input type="text" class="input" name="entry.2009853541" required placeholder="Nhập câu trả lời" autocomplete="off">
+          </div>
+          <div class="group-input">
+            <label>Quy tắc sống của em là gì 🧐</label>
+            <input type="text" class="input" name="entry.1223435065" required placeholder="Nhập câu trả lời" autocomplete="off">
+          </div>
+          <div class="group-input">
+            <label>Ai là người thân nhất với em trong gia đình 🧐</label>
+            <input type="text" class="input" name="entry.1996435822" required placeholder="Nhập câu trả lời" autocomplete="off">
+          </div>
+          <div class="group-input">
+            <label>Rảnh em làm gì để thư giãn 😁</label>
+            <input type="text" class="input" name="entry.489786510" required placeholder="Nhập câu trả lời" autocomplete="off">
+          </div>
+          <div class="group-input">
+            <label>Khoảnh khắc xấu hổ nhất em cảm thấy là gì 🤪 (Kể anh nghe để mình có thêm bí mật chung nào 😙)</label>
+            <input type="text" class="input" name="entry.1254027271" required placeholder="Nhập câu trả lời" autocomplete="off">
+          </div>
+          <!-- Phần chọn Có/Không -->
+          <div class="group-input">
+            <div class="group-select">
+              <label>Em có muốn hỏi lại anh gì không? Nếu em muốn thì chọn <strong>Có</strong> nhé 😚 sẽ có câu hỏi nè!</label>
+              <select name="entry.1818752923" id="question-toggle" class="uk-text-truncate">
+                <option value="Có">Có</option>
+                <option value="Không" selected>Không</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Phần câu hỏi bổ sung (Extra Questions) -->
+        <div id="question-container" style="display: none;">
+          <div class="group-input">
+            <label>Câu 1</label>
+            <input type="text" class="input" name="entry.625855130" placeholder="Nhập câu hỏi">
+          </div>
+          <div class="group-input">
+            <label>Câu 2</label>
+            <input type="text" class="input" name="entry.1981526654" placeholder="Nhập câu hỏi">
+          </div>
+          <div class="group-input">
+            <label>Câu 3</label>
+            <input type="text" class="input" name="entry.1244617633" placeholder="Nhập câu hỏi">
+          </div>
+          <div class="group-input">
+            <label>Câu 4</label>
+            <input type="text" class="input" name="entry.1753581199" placeholder="Nhập câu hỏi">
+          </div>
+          <div class="group-input">
+            <label>Câu 5</label>
+            <input type="text" class="input" name="entry.768371141" placeholder="Nhập câu hỏi">
+          </div>
+          <div class="group-input">
+            <label>Câu 6</label>
+            <input type="text" class="input" name="entry.1021543099" placeholder="Nhập câu hỏi">
+          </div>
+          <div class="group-input">
+            <label>Câu 7</label>
+            <input type="text" class="input" name="entry.344820579" placeholder="Nhập câu hỏi">
+          </div>
+          <div class="group-input">
+            <label>Câu 8</label>
+            <input type="text" class="input" name="entry.1136445565" placeholder="Nhập câu hỏi">
+          </div>
+        </div>
+        
+        <!-- Final Section: Lời nhắn và Xác nhận -->
+        <div id="final-section">
+          <div class="group-input">
+            <label>Lời nhắn</label>
+            <textarea name="entry.735862455" id="f_text" cols="30" rows="4" placeholder="Lời nhắn của em 🥰"></textarea>
+          </div>
+          <div class="group-input">
+            <button type="submit" class="wedding-submit">Xác nhận</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <!-- Hiệu ứng BoxCar xuất hiện ở dưới form -->
+  <div class="boxCar">
+    <img src="../image/mewmew.gif" alt="Gif 1">
+    <img src="../image/mewmew.gif" alt="Gif 2">
+    <img src="../image/mewmew.gif" alt="Gif 3">
+    <img src="../image/mewmew.gif" alt="Gif 4">
+    <img src="../image/mewmew.gif" alt="Gif 5">
+    <img src="../image/mewmew.gif" alt="Gif 6">
+    <img src="../image/mewmew.gif" alt="Gif 7">
+    <img src="../image/mewmew.gif" alt="Gif 8">
+    <img src="../image/mewmew.gif" alt="Gif 9">
+    <img src="../image/mewmew.gif" alt="Gif 10">
+    <img src="../image/mewmew.gif" alt="Gif 11">
+    <img src="../image/mewmew.gif" alt="Gif 12">
+    <img src="../image/heartAnimation.gif" alt="Gif 5">
+  </div>
+
+  <!-- Audio background (nếu cần) -->
+  <audio id="background-music" loop>
+    <source src="chill.mp3" type="audio/mpeg">
+    Trình duyệt của bạn không hỗ trợ phát nhạc.
+  </audio>
+
+  <!-- Script xử lý form và boxCar effect -->
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+  <script>
+    // Xử lý chuyển tiếp các câu hỏi trong phần chính
+    document.addEventListener("DOMContentLoaded", function () {
+      let questions = document.querySelectorAll(".main-questions .group-input");
+      const finalSection = document.getElementById("final-section");
+      
+      // Ẩn tất cả câu hỏi trừ câu đầu tiên
+      for (let i = 1; i < questions.length; i++) {
+        questions[i].style.display = "none";
+      }
+      
+      function showNextQuestion(index) {
+        if (index < questions.length - 1) {
+          questions[index].style.display = "none";
+          questions[index + 1].style.display = "block";
+          let nextInput = questions[index + 1].querySelector("input, textarea");
+          if (nextInput) nextInput.focus();
+        } else {
+          finalSection.style.display = "block";
+        }
+      }
+      
+      questions.forEach((question, index) => {
+        let input = question.querySelector("input, textarea");
+        if (input) {
+          input.addEventListener("blur", function () {
+            showNextQuestion(index);
+          });
+          input.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+              event.preventDefault();
+              showNextQuestion(index);
+            }
+          });
+        }
+      });
+    });
+    
+    // Xử lý Extra Questions & Final Section
+    document.addEventListener("DOMContentLoaded", function() {
+      var toggle = document.getElementById("question-toggle");
+      var extraContainer = document.getElementById("question-container");
+      var finalSection = document.getElementById("final-section");
+      
+      function updateFinalSection() {
+        if (toggle.value === "Có") {
+          finalSection.style.display = "none";
+          extraContainer.style.display = "block";
+          setupExtraQuestions();
+        } else {
+          extraContainer.style.display = "none";
+          finalSection.style.display = "block";
+        }
+      }
+      
+      toggle.addEventListener("change", updateFinalSection);
+      updateFinalSection();
+      
+      function setupExtraQuestions() {
+        let extraQuestions = extraContainer.querySelectorAll(".group-input");
+        for (let i = 1; i < extraQuestions.length; i++) {
+          extraQuestions[i].style.display = "none";
+        }
+        
+        function showNextExtra(index) {
+          if (index < extraQuestions.length - 1) {
+            extraQuestions[index].style.display = "none";
+            extraQuestions[index + 1].style.display = "block";
+            let nextInput = extraQuestions[index + 1].querySelector("input, textarea");
+            if (nextInput) nextInput.focus();
+          } else {
+            finalSection.style.display = "block";
+          }
+        }
+        
+        extraQuestions.forEach((question, index) => {
+          let input = question.querySelector("input, textarea");
+          if (input) {
+            input.addEventListener("blur", function () {
+              showNextExtra(index);
+            });
+            input.addEventListener("keypress", function (event) {
+              if (event.key === "Enter") {
+                event.preventDefault();
+                showNextExtra(index);
+              }
+            });
+          }
+        });
+      }
+    });
+    
+    // Xử lý phát nhạc nền
+    document.addEventListener("DOMContentLoaded", function () {
+      let audio = document.getElementById("background-music");
+      audio.volume = 0.1;
+      let playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          console.log("Nhạc đã phát với âm lượng: " + audio.volume);
+        }).catch(error => {
+          console.log("Tự động phát bị chặn, yêu cầu tương tác.");
+          document.body.addEventListener("click", function playAudio() {
+            audio.volume = 0.4;
+            audio.play();
+            document.body.removeEventListener("click", playAudio);
+          });
+        });
+      }
+    });
+    
+    // Các script xử lý hiệu ứng mở/đóng form
+    $(window).on('load', function(){
+      $('body').removeClass('preloading');
+      // (Các hiệu ứng gõ chữ và mở form đã được cài đặt trước đó)
+    });
+    
+    $(document).on("click", function(){
+      if($(".wrapperLetterForm").is(":visible")){
+        $(".wrapperLetterForm").fadeOut();
+      }
+    });
+    
+    // Xử lý chuyển slider (nếu có)
+    document.querySelector(".boxSlider .right").addEventListener("click", function(){
+      var slider = document.querySelectorAll(".slider");
+      document.querySelector(".listSlider").appendChild(slider[0]);
+    });
+    document.querySelector(".boxSlider .left").addEventListener("click", function(){
+      var slider = document.querySelectorAll(".slider");
+      document.querySelector(".listSlider").prepend(slider[slider.length -1]);
+    });
+    
+  
+    
+    // Hàm animateGif: di chuyển ảnh đến vị trí ngẫu nhiên bên trong .boxCar
+    function animateGif($img) {
+      var containerWidth = $('.boxCar').width();
+      var containerHeight = $('.boxCar').height();
+      var newLeft = Math.random() * (containerWidth - $img.width());
+      var newTop = Math.random() * (containerHeight - $img.height());
+      var duration = Math.random() * 5000 + 3000;
+      $img.animate({ left: newLeft + 'px', top: newTop + 'px' }, duration, function(){
+        animateGif($img);
+      });
+    }
+  </script>
+   <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+   <script>
+     // (Các script xử lý chuyển tiếp câu hỏi, extra questions, final section, và âm nhạc nền được giữ nguyên)
+     
+     // --- Chuyển ảnh ra ngoài và animate chạy quanh màn hình ---
+     $('.boxCar img').each(function(){
+        var $img = $(this);
+        // Di chuyển ảnh ra ngoài container, append vào body
+        $img.appendTo('body');
+        // Đặt kích thước nhỏ hơn
+        $img.css("width", "50px");
+        // Đặt vị trí ban đầu ngẫu nhiên
+        $img.css({
+          position: 'absolute',
+          left: Math.random() * ($(window).width() - $img.width()),
+          top: Math.random() * ($(window).height() - $img.height())
+        });
+        animateGif($img);
+      });
+  
+   </script>
+</body>
+</html>
