@@ -5,7 +5,8 @@
     box-sizing: border-box;
 }
 body{
-    background: url('/a.gif') no-repeat center center fixed;
+    background: url('https://phamthuongpvt.github.io/hieuem/image/l.gif') no-repeat center center fixed;
+
     display: flex;
     justify-content: center;
     align-items: center;
